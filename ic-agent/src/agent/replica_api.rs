@@ -59,7 +59,7 @@ pub struct ReadStateResponse {
 
 /// A `Certificate` as defined in https://docs.dfinity.systems/public/#_certificate
 #[derive(Deserialize)]
-pub(crate) struct Certificate {
+pub struct Certificate {
     pub tree: HashTree,
 
     #[serde(with = "serde_bytes")]
@@ -69,7 +69,7 @@ pub(crate) struct Certificate {
 }
 
 #[derive(Deserialize)]
-pub(crate) struct Delegation {
+pub struct Delegation {
     #[serde(with = "serde_bytes")]
     pub subnet_id: Vec<u8>,
 

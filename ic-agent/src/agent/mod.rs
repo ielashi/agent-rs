@@ -398,7 +398,7 @@ impl Agent {
         .await
     }
 
-    async fn read_state_raw(&self, paths: Vec<Vec<Label>>) -> Result<Certificate, AgentError> {
+    pub async fn read_state_raw(&self, paths: Vec<Vec<Label>>) -> Result<Certificate, AgentError> {
         let read_state_response: ReadStateResponse = self
             .read_endpoint(SyncContent::ReadStateRequest {
                 sender: self.identity.sender().map_err(AgentError::SigningError)?,
